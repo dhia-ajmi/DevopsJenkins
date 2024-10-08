@@ -3,8 +3,8 @@ pipeline {
     agent any
 
     tools {
-        jdk 'jdk-17'         // Remplacez par le nom du JDK configuré dans Jenkins
-        maven 'maven-3'      // Remplacez par le nom de Maven configuré dans Jenkins
+        jdk 'JAVA_HOME'
+        maven 'M2_HOME'
     }
 
     stages {
