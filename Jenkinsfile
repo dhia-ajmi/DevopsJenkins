@@ -2,7 +2,10 @@ pipeline {
 
     agent any
 
-    tools { jdk 'JAVA_HOME', maven 'M2_HOME' }
+    tools {
+        jdk 'jdk-17'         // Remplacez par le nom du JDK configuré dans Jenkins
+        maven 'maven-3'      // Remplacez par le nom de Maven configuré dans Jenkins
+    }
 
     stages {
 
@@ -16,7 +19,7 @@ pipeline {
 
         }
 
-        stage ('Compile Stage') {
+        stage('Compile Stage') {
 
             steps {
 
