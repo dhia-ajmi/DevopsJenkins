@@ -1,33 +1,31 @@
 pipeline {
 
- agent any
+    agent any
 
- tools {jdk 'JAVA_HOME’, maven 'M2_HOME'}
+    tools { jdk 'JAVA_HOME', maven 'M2_HOME' }
 
- stages {
+    stages {
 
- stage('GIT') {
+        stage('GIT') {
 
-           steps {
+            steps {
 
-               git branch: 'master',
+                git branch: 'master', url: 'https://github.com/dhia-ajmi/DevopsJenkins.git'
 
-               url: ' https://github.com/dhia-ajmi/DevopsJenkins.git'
+            }
 
-          }
+        }
 
-     }
+        stage ('Compile Stage') {
 
- stage ('Compile Stage') {
+            steps {
 
- steps {
+                sh 'mvn clean compile'
 
- sh 'mvn clean compile'
+            }
 
- }
+        }
 
- }
-
- }
+    }
 
 }
